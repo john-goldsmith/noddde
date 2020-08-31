@@ -1,0 +1,10 @@
+components:
+  schemas:
+    CreateUserRequestSchema:
+      type: object
+      required:
+        - data
+      properties:
+        data:
+          $ref: '#/components/schemas/CreateUserRequestData'
+      additionalProperties: false

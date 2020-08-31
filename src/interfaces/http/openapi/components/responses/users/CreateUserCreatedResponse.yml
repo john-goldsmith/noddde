@@ -1,0 +1,8 @@
+components:
+  responses:
+    CreateUserCreatedResponse:
+      description: OK
+      content:
+        application/vnd.api+json:
+          schema:
+            $ref: '#/components/schemas/CreateUserResponseSchema'

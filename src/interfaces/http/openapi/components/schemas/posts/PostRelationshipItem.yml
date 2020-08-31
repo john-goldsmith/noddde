@@ -1,0 +1,13 @@
+components:
+  schemas:
+    PostRelationshipItem:
+      type: object
+      required:
+        - type
+        - id
+      properties:
+        type:
+          $ref: '#/components/schemas/PostType'
+        id:
+          type: string
+      additionalProperties: false

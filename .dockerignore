@@ -1,0 +1,21 @@
+node_modules
+npm-debug.log
+.git
+# .env
+.vscode
+.DS_Store
+.env.sample
+.eslintrc.js
+coverage
+docker
+doc
+cloudformation
+.gitignore
+.prettierrrc
+bitbucket-pipelines.yml
+ci
+docker-compose.local.yml
+docker-compose.yml
+PULL_REQUEST_TEMPLATE.md
+QuickBooks Online V3API Collections - OAuth2.json
+README.md

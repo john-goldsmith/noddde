@@ -1,0 +1,16 @@
+# Node / npm
+node_modules
+.env
+coverage
+
+# Misc
+.DS_Store
+
+# JetBrains
+.idea
+
+# SonarQube
+.scannerwork/
+.sonar/
+
+dist

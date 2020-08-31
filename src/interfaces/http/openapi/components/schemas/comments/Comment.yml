@@ -1,0 +1,16 @@
+components:
+  schemas:
+    Comment:
+      type: object
+      properties:
+        type:
+          $ref: '#/components/schemas/CommentType'
+        id:
+          type: string
+        attributes:
+          $ref: '#/components/schemas/CommentAttributes'
+        # links:
+        #   $ref: '#/components/schemas/ResourceObjectLinks'
+        relationships:
+          $ref: '#/components/schemas/CommentRelationships'
+      additionalProperties: false

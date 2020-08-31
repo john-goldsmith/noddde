@@ -1,0 +1,9 @@
+components:
+  parameters:
+    ReplaceUserIdPathParameter:
+      name: id
+      in: path
+      description: ID of user to replace
+      required: true
+      schema:
+        type: string

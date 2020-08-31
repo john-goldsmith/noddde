@@ -1,0 +1,13 @@
+components:
+  schemas:
+    UserIncludes:
+      type: array
+      items:
+        anyOf:
+          - $ref: '#/components/schemas/Post'
+          - $ref: '#/components/schemas/Comment'
+        discriminator:
+          propertyName: type
+          mapping:
+            posts: '#/components/schemas/Post'
+            comments: '#/components/schemas/Comment'

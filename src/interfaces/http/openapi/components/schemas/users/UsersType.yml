@@ -1,0 +1,6 @@
+components:
+  schemas:
+    UsersType:
+      type: string
+      enum:
+        - users

@@ -1,0 +1,6 @@
+components:
+  schemas:
+    PostType:
+      type: string
+      enum:
+        - posts

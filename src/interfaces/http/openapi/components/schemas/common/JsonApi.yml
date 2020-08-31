@@ -1,0 +1,10 @@
+components:
+  schemas:
+    JsonApi:
+      type: object
+      properties:
+        version:
+          type: string
+          enum:
+            - "1.0"
+      additionalProperties: false

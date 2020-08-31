@@ -1,0 +1,16 @@
+components:
+  schemas:
+    ListHealthResponseSchema:
+      type: object
+      properties:
+        jsonapi:
+          $ref: '#/components/schemas/JsonApi'
+        data:
+          $ref: '#/components/schemas/Health'
+        meta:
+          type: object
+        links:
+          $ref: '#/components/schemas/TopLevelLinks'
+        included:
+          type: object
+      additionalProperties: false

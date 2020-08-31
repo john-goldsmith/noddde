@@ -1,0 +1,21 @@
+# See https://docs.docker.com/compose/compose-file/
+
+version: '2.4'
+services:
+  swagger-ui:
+    environment:
+      API_URL: 'http://localhost:3001/openapi'
+  api:
+    command: npm run start:dev
+    # command: npm run start:debug
+    # command: npx nodemon --inspect=0.0.0.0 ./index.js
+    volumes:
+      - ./dist:/noddde/dist
+      - ./src:/noddde/src
+    ports:
+      - 9229:9229
+      - 9222:9222
+  # worker:
+  #   command: npm run start:worker:dev
+  #   volumes:
+  #     - ./src:/noddde/src

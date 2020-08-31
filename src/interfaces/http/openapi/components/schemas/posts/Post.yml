@@ -1,0 +1,16 @@
+components:
+  schemas:
+    Post:
+      type: object
+      properties:
+        type:
+          $ref: '#/components/schemas/PostType'
+        id:
+          type: string
+        attributes:
+          $ref: '#/components/schemas/PostAttributes'
+        # links:
+        #   $ref: '#/components/schemas/ResourceObjectLinks'
+        relationships:
+          $ref: '#/components/schemas/PostRelationships'
+      additionalProperties: false

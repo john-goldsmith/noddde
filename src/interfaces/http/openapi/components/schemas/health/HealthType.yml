@@ -1,0 +1,6 @@
+components:
+  schemas:
+    HealthType:
+      type: string
+      enum:
+        - health

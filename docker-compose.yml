@@ -1,0 +1,160 @@
+# See https://docs.docker.com/compose/compose-file/
+
+version: '2.4'
+services:
+  swagger-ui:
+    container_name: swagger-ui
+    image: swaggerapi/swagger-ui
+    ports:
+      - 3200:8080
+  # elasticsearch:
+  #   container_name: elasticsearch
+  #   # image: elasticsearch:7.2.0
+  #   build: ./docker/elasticsearch
+  #   ports:
+  #     - 9200:9200
+  #     - 9300:9300
+  #   # networks:
+  #   #   - oracle
+  #   environment:
+  #     - discovery.type=single-node
+  #   # healthcheck:
+  #   #   test: docker-healthcheck-elasticsearch
+  #   #   interval: 60s
+  #   #   timeout: 10s
+  #   #   retries: 3
+  # kibana:
+  #   container_name: kibana
+  #   image: kibana:7.2.0
+  #   ports:
+  #     - 5601:5601
+  #   environment:
+  #     ELASTICSEARCH_HOSTS: 'http://elasticsearch:9200'
+  #   depends_on:
+  #     elasticsearch:
+  #       condition: service_healthy
+  #   links:
+  #     - elasticsearch
+  #   # networks:
+  #   #   - oracle
+  # redis:
+  #   container_name: redis
+  #   # image: redis:5.0.3
+  #   build: ./docker/redis
+  #   ports:
+  #     - 6379:6379
+  #   # healthcheck:
+  #   #   test: docker-healthcheck-redis
+  #   #   interval: 60s
+  #   #   timeout: 10s
+  #   #   retries: 3
+  # mysql:
+  #   container_name: mysql
+  #   # image: mysql:5.7.25
+  #   build: ./docker/mysql
+  #   ports:
+  #     - 3306:3306
+  #   # volumes:
+  #   #   - ./data/db:/data/db
+  #   environment:
+  #     # MYSQL_ROOT_PASSWORD:
+  #     MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+  #     # MYSQL_RANDOM_ROOT_PASSWORD
+  #   # healthcheck:
+  #   #   test: docker-healthcheck-mysql
+  #   #   interval: 60s
+  #   #   timeout: 10s
+  #   #   retries: 3
+  mongo:
+    container_name: mongo
+    build: ./docker/mongo
+    ports:
+      - 27017:27017
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: 'root'
+      MONGO_INITDB_ROOT_PASSWORD: 'root'
+      MONGO_INITDB_DATABASE: 'noddde_development'
+    volumes:
+      - ./docker/mongo/docker-entrypoint-initdb.d/001-users.js:/docker-entrypoint-initdb.d/001-users.js:ro
+  # postgres:
+  #   container_name: postgres
+  #   build: ./docker/postgres
+  #   ports:
+  #     - 5432:5432
+  #   environment:
+  #     POSTGRES_HOST_AUTH_METHOD: trust
+  #   # healthcheck:
+  #   #   test: docker-healthcheck-postgres
+  #   #   interval: 60s
+  #   #   timeout: 10s
+  #   #   retries: 3
+  api:
+    entrypoint: ["./docker-entrypoint.sh"]
+    container_name: api
+    build: .
+    # command: npm run start
+    # healthcheck:
+    #   test: ["CMD", "curl", "-f", "-H", "Content-Type: application/vnd.api+json", "http://127.0.0.1:3001/v1/health-check"] # TODO: Check for 200 OK
+    #   interval: 60s
+    #   timeout: 10s
+    #   retries: 3
+    # networks:
+    #   - oracle
+      # start_period: 40s
+    # working_dir: /noddde
+    # volumes:
+    #   - .:/noddde
+    ports:
+      - 3001:3001
+      # - 9222:9222
+      # - 9229:9229
+      # - 9299:9299
+    depends_on:
+      # mysql:
+      #   condition: service_healthy
+      # postgres:
+      #   condition: service_healthy
+      mongo:
+        condition: service_healthy
+      # redis:
+      #   condition: service_healthy
+      # elasticsearch:
+      #   condition: service_healthy
+    links:
+      # - mysql
+      # - postgres
+      - mongo
+      # - redis
+      # - elasticsearch
+  # worker:
+  #   # entrypoint: ["./docker-entrypoint.sh"]
+  #   container_name: worker
+  #   build: .
+  #   # command: node --inspect=0.0.0.0 ./index.js
+  #   # command: npm run start:worker
+  #   # working_dir: /noddde
+  #   # volumes:
+  #   #   - .:/noddde
+  #   # ports:
+  #     # - 3000:3000
+  #     # - 9222:9222
+  #     # - 9229:9229
+  #     # - 9299:9299
+  #   # networks:
+  #   #   - oracle
+  #   depends_on:
+  #     mysql:
+  #       condition: service_healthy
+  #     api: # Needed for database creation, migration, etc.
+  #       condition: service_healthy
+  #     redis:
+  #       condition: service_healthy
+  #     elasticsearch:
+  #       condition: service_healthy
+  #   links:
+  #     - mysql
+  #     - redis
+  #     - elasticsearch
+# networks:
+#   oracle:
+#     name: oracle

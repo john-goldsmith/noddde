@@ -1,0 +1,8 @@
+components:
+  responses:
+    ReplaceUserOkResponse:
+      description: OK
+      content:
+        application/vnd.api+json:
+          schema:
+            $ref: '#/components/schemas/ReplaceUserResponseSchema'

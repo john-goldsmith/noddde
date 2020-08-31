@@ -1,0 +1,10 @@
+components:
+  headers:
+    WWW-Authenticate:
+      description: >
+        Indicates the authentication scheme(s) and parameters applicable
+        to the target resource.
+      schema:
+        type: string
+        enum:
+          - Bearer

@@ -1,0 +1,11 @@
+components:
+  schemas:
+    HealthAttributes:
+      type: object
+      properties:
+        mongo:
+          type: boolean
+          enum:
+            - true
+            - false
+      additionalProperties: false

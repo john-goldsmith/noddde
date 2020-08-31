@@ -1,0 +1,8 @@
+components:
+  responses:
+    ListHealthOkResponse:
+      description: OK
+      content:
+        application/vnd.api+json:
+          schema:
+            $ref: '#/components/schemas/ListHealthResponseSchema'

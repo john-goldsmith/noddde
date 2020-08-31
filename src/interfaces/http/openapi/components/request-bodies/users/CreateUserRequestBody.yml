@@ -1,0 +1,9 @@
+components:
+  requestBodies:
+    CreateUserRequestBody:
+      description: A user resource object to create
+      required: true
+      content:
+        application/vnd.api+json:
+          schema:
+            $ref: '#/components/schemas/CreateUserRequestSchema'

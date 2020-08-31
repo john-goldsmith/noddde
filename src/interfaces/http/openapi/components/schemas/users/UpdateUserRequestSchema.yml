@@ -1,0 +1,10 @@
+components:
+  schemas:
+    UpdateUserRequestSchema:
+      type: object
+      required:
+        - data
+      properties:
+        data:
+          $ref: '#/components/schemas/UpdateUserRequestData'
+      additionalProperties: false

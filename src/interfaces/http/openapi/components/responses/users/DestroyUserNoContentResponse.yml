@@ -1,0 +1,8 @@
+components:
+  responses:
+    DestroyUserNoContentResponse:
+      description: OK
+      content:
+        application/vnd.api+json:
+          schema:
+            type: object

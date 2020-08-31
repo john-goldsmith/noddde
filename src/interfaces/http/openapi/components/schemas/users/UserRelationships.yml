@@ -1,0 +1,10 @@
+components:
+  schemas:
+    UserRelationships:
+      type: object
+      properties:
+        posts:
+          $ref: '#/components/schemas/PostRelationships'
+        comments:
+          $ref: '#/components/schemas/CommentRelationships'
+      additionalProperties: false

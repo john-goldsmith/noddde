@@ -1,0 +1,16 @@
+components:
+  schemas:
+    ShowUserSchema:
+      type: object
+      properties:
+        jsonapi:
+          $ref: '#/components/schemas/JsonApi'
+        data:
+          $ref: '#/components/schemas/User'
+        meta:
+          type: object
+        links:
+          $ref: '#/components/schemas/TopLevelLinks'
+        included:
+          $ref: '#/components/schemas/UserIncludes'
+      additionalProperties: false

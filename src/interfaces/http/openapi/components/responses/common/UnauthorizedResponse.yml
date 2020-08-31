@@ -1,0 +1,11 @@
+components:
+  responses:
+    UnauthorizedResponse:
+      description: Unauthorized
+      headers:
+        WWW-Authenticate:
+          $ref: '#/components/headers/WWW-Authenticate'
+      content:
+        application/vnd.api+json:
+          schema:
+            $ref: '#/components/schemas/ClientError'

@@ -1,0 +1,9 @@
+components:
+  parameters:
+    ShowUserIdPathParameter:
+      name: id
+      in: path
+      description: ID of user to retrieve
+      required: true
+      schema:
+        type: string

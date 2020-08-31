@@ -1,0 +1,8 @@
+components:
+  responses:
+    InternalServerErrorResponse:
+      description: Internal server error
+      content:
+        application/vnd.api+json:
+          schema:
+            $ref: '#/components/schemas/ServerError'

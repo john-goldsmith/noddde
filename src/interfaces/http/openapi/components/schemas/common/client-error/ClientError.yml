@@ -1,0 +1,10 @@
+components:
+  schemas:
+    ClientError:
+      type: object
+      properties:
+        errors:
+          type: array
+          items:
+            $ref: '#/components/schemas/ClientErrorItem'
+      additionalProperties: false

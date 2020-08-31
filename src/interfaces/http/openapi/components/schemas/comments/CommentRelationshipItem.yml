@@ -1,0 +1,13 @@
+components:
+  schemas:
+    CommentRelationshipItem:
+      type: object
+      required:
+        - type
+        - id
+      properties:
+        type:
+          $ref: '#/components/schemas/CommentType'
+        id:
+          type: string
+      additionalProperties: false

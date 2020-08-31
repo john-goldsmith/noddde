@@ -1,0 +1,10 @@
+components:
+  schemas:
+    ReplaceUserRequestSchema:
+      type: object
+      required:
+        - data
+      properties:
+        data:
+          $ref: '#/components/schemas/ReplaceUserRequestData'
+      additionalProperties: false

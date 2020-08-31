@@ -1,0 +1,9 @@
+components:
+  requestBodies:
+    UpdateUserRequestBody:
+      description: A user resource object to update
+      required: true
+      content:
+        application/vnd.api+json:
+          schema:
+            $ref: '#/components/schemas/UpdateUserRequestSchema'

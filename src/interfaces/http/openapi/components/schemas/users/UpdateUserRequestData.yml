@@ -1,0 +1,18 @@
+components:
+  schemas:
+    UpdateUserRequestData:
+      type: object
+      required:
+        - type
+        - id
+        - attributes
+      properties:
+        type:
+          $ref: '#/components/schemas/UsersType'
+        id:
+          type: string
+        attributes:
+          $ref: '#/components/schemas/UserAttributes'
+        relationships:
+          $ref: '#/components/schemas/UserRelationships'
+      additionalProperties: false

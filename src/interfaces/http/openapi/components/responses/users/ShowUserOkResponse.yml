@@ -1,0 +1,8 @@
+components:
+  responses:
+    ShowUserOkResponse:
+      description: OK
+      content:
+        application/vnd.api+json:
+          schema:
+            $ref: '#/components/schemas/ShowUserSchema'

@@ -1,0 +1,8 @@
+components:
+  responses:
+    ForbiddenResponse:
+      description: Forbidden
+      content:
+        application/vnd.api+json:
+          schema:
+            $ref: '#/components/schemas/ClientError'

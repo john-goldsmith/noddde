@@ -1,0 +1,9 @@
+components:
+  parameters:
+    DestroyUserIdPathParameter:
+      name: id
+      in: path
+      description: ID of user to destroy
+      required: true
+      schema:
+        type: string

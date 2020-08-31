@@ -1,0 +1,5 @@
+tags:
+  - name: Users
+    description: APIs for interacting with user resources
+    externalDocs:
+      url: https://yahoo.com

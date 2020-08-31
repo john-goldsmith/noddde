@@ -1,0 +1,8 @@
+components:
+  schemas:
+    CommentAttributes:
+      type: object
+      properties:
+        body:
+          type: string
+      additionalProperties: false

@@ -1,0 +1,9 @@
+components:
+  requestBodies:
+    ReplaceUserRequestBody:
+      description: A user resource object to replace
+      required: true
+      content:
+        application/vnd.api+json:
+          schema:
+            $ref: '#/components/schemas/ReplaceUserRequestSchema'

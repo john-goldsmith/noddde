@@ -1,0 +1,19 @@
+components:
+  schemas:
+    User:
+      type: object
+      properties:
+        type:
+          $ref: '#/components/schemas/UsersType'
+        id:
+          type: string
+        attributes:
+          $ref: '#/components/schemas/UserAttributes'
+        links:
+          type: object
+          # $ref: '#/components/schemas/ResourceObjectLinks'
+        meta:
+          type: object
+        relationships:
+          $ref: '#/components/schemas/UserRelationships'
+      additionalProperties: false

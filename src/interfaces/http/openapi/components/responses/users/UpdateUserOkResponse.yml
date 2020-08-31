@@ -1,0 +1,8 @@
+components:
+  responses:
+    UpdateUserOkResponse:
+      description: OK
+      content:
+        application/vnd.api+json:
+          schema:
+            $ref: '#/components/schemas/UpdateUserResponseSchema'

@@ -1,0 +1,8 @@
+components:
+  responses:
+    ListUsersOkResponse:
+      description: OK
+      content:
+        application/vnd.api+json:
+          schema:
+            $ref: '#/components/schemas/ListUsersResponseSchema'

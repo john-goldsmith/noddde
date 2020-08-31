@@ -1,0 +1,18 @@
+components:
+  schemas:
+    Health:
+      type: object
+      properties:
+        type:
+          $ref: '#/components/schemas/HealthType'
+        id:
+          type: string
+        attributes:
+          $ref: '#/components/schemas/HealthAttributes'
+        links:
+          type: object
+        meta:
+          type: object
+        relationships:
+          type: object
+      additionalProperties: false

@@ -1,0 +1,13 @@
+components:
+  schemas:
+    CommentRelationships:
+      type: object
+      required:
+        - data
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/CommentRelationshipItem'
+          uniqueItems: true
+      additionalProperties: false

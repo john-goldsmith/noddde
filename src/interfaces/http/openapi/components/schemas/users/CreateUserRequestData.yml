@@ -1,0 +1,21 @@
+components:
+  schemas:
+    CreateUserRequestData:
+      type: object
+      required:
+        - type
+        - attributes
+      properties:
+        type:
+          $ref: '#/components/schemas/UsersType'
+        attributes:
+          allOf:
+            - $ref: '#/components/schemas/UserAttributes'
+            - type: object
+              required:
+                - email
+                - username
+                - password
+        relationships:
+          $ref: '#/components/schemas/UserRelationships'
+      additionalProperties: false

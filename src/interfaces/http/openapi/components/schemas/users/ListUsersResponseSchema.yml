@@ -1,0 +1,20 @@
+components:
+  schemas:
+    ListUsersResponseSchema:
+      type: object
+      properties:
+        jsonapi:
+          $ref: '#/components/schemas/JsonApi'
+        data:
+          description: An array of zero or more users
+          type: array
+          items:
+            $ref: '#/components/schemas/User'
+          uniqueItems: true
+        meta:
+          type: object
+        links:
+          $ref: '#/components/schemas/TopLevelLinks'
+        included:
+          $ref: '#/components/schemas/UserIncludes'
+      additionalProperties: false

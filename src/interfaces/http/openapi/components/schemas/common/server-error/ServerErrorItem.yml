@@ -1,0 +1,22 @@
+components:
+  schemas:
+    ServerErrorItem:
+      type: object
+      properties:
+        status:
+          type: string
+        title:
+          type: string
+        detail:
+          type: string
+        code:
+          oneOf:
+            - type: string
+            # The following is technically not JSON:API-compliant, but
+            # Mongo supplies error codes as numbers.
+            - type: number
+        source:
+          $ref: '#/components/schemas/ServerErrorItemSource'
+        meta:
+          type: object
+      additionalProperties: false

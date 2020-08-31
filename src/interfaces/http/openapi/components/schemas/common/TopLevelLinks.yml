@@ -1,0 +1,8 @@
+components:
+  schemas:
+    TopLevelLinks:
+      type: object
+      readOnly: true
+      properties:
+        self:
+          type: string

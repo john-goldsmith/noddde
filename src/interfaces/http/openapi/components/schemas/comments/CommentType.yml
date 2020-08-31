@@ -1,0 +1,6 @@
+components:
+  schemas:
+    CommentType:
+      type: string
+      enum:
+        - comments

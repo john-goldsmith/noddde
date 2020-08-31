@@ -1,0 +1,17 @@
+components:
+  parameters:
+    ReplaceUserIncludeQueryParameter:
+      name: include
+      in: query
+      description: Association to include with the replaced user
+      required: false
+      allowReserved: true
+      schema:
+        type: array
+        items:
+          type: string
+          enum:
+            - posts
+            - comments
+      style: form
+      explode: false
